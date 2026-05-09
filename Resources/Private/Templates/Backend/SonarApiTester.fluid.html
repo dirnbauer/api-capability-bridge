@@ -1,0 +1,110 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<div
+    class="container-fluid"
+    id="sonar-api-tester"
+    data-examples="{examplesJson}"
+    data-default-tenant="{defaultTenant}"
+>
+    <div class="row">
+        <div class="col-12 col-xl-5">
+            <div class="card mb-3">
+                <div class="card-header">
+                    <strong>Configured resources</strong>
+                </div>
+                <div class="card-body">
+                    <p class="text-muted mb-3">Single source of truth: <code>{policyFile}</code></p>
+                    <f:if condition="{resources}">
+                        <f:then>
+                            <div class="table-fit">
+                                <table class="table table-striped table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th>Label</th>
+                                        <th>API</th>
+                                        <th>Table</th>
+                                        <th>Base path</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <f:for each="{resources}" as="resource">
+                                        <tr>
+                                            <td>{resource.label}</td>
+                                            <td><code>{resource.api}</code></td>
+                                            <td><code>{resource.table}</code></td>
+                                            <td><code>{resource.basePath}</code></td>
+                                        </tr>
+                                    </f:for>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </f:then>
+                        <f:else>
+                            <div class="alert alert-warning">No API resources configured.</div>
+                        </f:else>
+                    </f:if>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <strong>Examples</strong>
+                </div>
+                <div class="list-group list-group-flush" id="sonar-examples"></div>
+            </div>
+        </div>
+
+        <div class="col-12 col-xl-7">
+            <div class="card">
+                <div class="card-header">
+                    <strong>Request</strong>
+                </div>
+                <div class="card-body">
+                    <div class="row g-2 mb-3">
+                        <div class="col-12 col-md-3">
+                            <label class="form-label" for="sonar-method">Method</label>
+                            <select id="sonar-method" class="form-select">
+                                <option>GET</option>
+                                <option>POST</option>
+                                <option>PATCH</option>
+                                <option>DELETE</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-md-9">
+                            <label class="form-label" for="sonar-url">URL</label>
+                            <input id="sonar-url" class="form-control" value="/api/news/v1/news" />
+                        </div>
+                    </div>
+                    <div class="row g-2 mb-3">
+                        <div class="col-12 col-lg-5">
+                            <label class="form-label" for="sonar-tenant">Tenant ID</label>
+                            <input id="sonar-tenant" class="form-control" value="{defaultTenant}" placeholder="camino" />
+                        </div>
+                        <div class="col-12 col-lg-7">
+                            <label class="form-label" for="sonar-token">Bearer token</label>
+                            <input id="sonar-token" class="form-control" placeholder="Paste personal BE-user token" />
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="sonar-body">JSON body</label>
+                        <textarea id="sonar-body" class="form-control font-monospace" rows="14"></textarea>
+                    </div>
+                    <button class="btn btn-primary" type="button" id="sonar-send">Send request</button>
+                </div>
+            </div>
+
+            <div class="card mt-3">
+                <div class="card-header">
+                    <strong>Response</strong>
+                </div>
+                <div class="card-body">
+                    <pre
+                        id="sonar-response"
+                        class="p-3 border rounded overflow-auto mb-0"
+                        style="min-height: 220px; color: var(--typo3-text-color-base, var(--bs-body-color)); background-color: var(--typo3-surface-container-lowest, var(--bs-tertiary-bg)); border-color: var(--typo3-component-border-color, var(--bs-border-color)) !important; white-space: pre-wrap; overflow-wrap: anywhere;"
+                    >Choose an example or send a request.</pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</html>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2">
+  <file source-language="en" datatype="plaintext" original="messages" date="2026-05-07T00:00:00Z">
+    <body>
+      <trans-unit id="mlang_tabs_tab">
+        <source>Sonar API Tester</source>
+      </trans-unit>
+      <trans-unit id="mlang_labels_tablabel">
+        <source>Sonar API Tester</source>
+      </trans-unit>
+      <trans-unit id="mlang_labels_tabdescr">
+        <source>Test capability-gated TYPO3 API resources.</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,23 @@
+{
+    "name": "dirnbauer/api-capability-bridge",
+    "description": "Capability-policy wrapper for sg_apicore resources and TYPO3 backend API testing.",
+    "type": "typo3-cms-extension",
+    "license": "GPL-2.0-or-later",
+    "require": {
+        "php": "^8.3",
+        "sgalinski/sg-apicore": "dev-main",
+        "typo3/cms-backend": "^14.3",
+        "typo3/cms-core": "^14.3",
+        "webconsulting/typo3-capability-manifest": "dev-main"
+    },
+    "autoload": {
+        "psr-4": {
+            "Dirnbauer\\ApiCapabilityBridge\\": "Classes/"
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "api_capability_bridge"
+        }
+    }
+}

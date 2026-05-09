@@ -1,0 +1,22 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  Dirnbauer\ApiCapabilityBridge\:
+    resource: '../Classes/*'
+
+  Dirnbauer\ApiCapabilityBridge\Service\CapabilityResourceRegistrar:
+    public: true
+
+  Dirnbauer\ApiCapabilityBridge\Security\BackendBearerOpaqueTokenProvider:
+    tags:
+      - name: sg_apicore.login_provider
+
+  Dirnbauer\ApiCapabilityBridge\Controller\NewsStudioController:
+    tags:
+      - name: sg_apicore.router
+
+  Webconsulting\CapabilityManifest\Manifest\ManifestLoader:
+    public: false
