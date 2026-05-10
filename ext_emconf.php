@@ -2,7 +2,7 @@
 
 $EM_CONF[$_EXTKEY] = [
     'title' => 'API Capability Bridge',
-    'description' => 'Registers sg_apicore CRUD resources from a capability policy and adds a backend API tester.',
+    'description' => 'Registers sg_apicore CRUD resources from a capability policy.',
     'category' => 'be',
     'author' => 'Dirnbauer',
     'author_email' => 'office@webconsulting.at',
